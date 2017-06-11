@@ -1,0 +1,41 @@
+$teal: #29838f;
+
+#elemental-the-multipurpose-insulated-stainless-steel-water-bottle {
+  .hero::before {
+      background-color: transparent;
+    }
+  
+  
+  .instagram-container {
+    width: 100%;
+    
+    #instafeed-instagram {
+      .instagram-indiv {
+        width: 20%;
+      }
+      
+      .instagram-indiv:nth-child(-n+5) {
+        padding-bottom: 30px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  #elemental-the-multipurpose-insulated-stainless-steel-water-bottle {
+
+    .instagram-container {
+      width: 100%;
+
+      #instafeed-instagram {
+        .instagram-indiv {
+          width: 50%;
+        }
+        
+        .instagram-indiv:nth-child(-n+5) {
+          padding-bottom: 0;
+        }
+      }
+    }
+  }
+}

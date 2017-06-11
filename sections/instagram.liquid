@@ -1,0 +1,121 @@
+<div class="container">
+
+	<div class="row">
+	
+		<div class="col-md-12">
+		
+			{% if section.settings.show-title %}		
+			
+				<div class="title-bar custom-font{% if section.settings.instagram-homepage-width == 'full-width' %} instagram-wrapper--header-no-padding{% endif %}">
+					{% if settings.sm_instagram_link != empty %}
+					<a href="{{ settings.sm_instagram_link }}" target="_blank">
+					{% endif %}
+						<h2><i class="fa fa-instagram"></i> {{ section.settings.title }}</h2>
+					{% if settings.sm_instagram_link != empty %}
+					</a>
+					{% endif %}
+					<div class="clear"></div>
+				</div>
+				
+			{% endif %}	
+			
+			
+		</div>
+	
+	</div>
+
+</div>
+
+{% if section.settings.instagram-homepage-width == 'full-width' %}
+	<div class="container-fluid homepage-slider-container">
+		<div class="row">
+			<div class="page-width col-md-10">
+{% else %}	
+	<div class="container">
+		<div class="row">
+			<div class="page-width col-md-10 instagram-container">
+{% endif %}
+
+{% if section.settings.instagram-access-token != empty %}	
+	
+		<input type="hidden" id="token-{{ section.id }}" value="{{ section.settings.instagram-access-token }}" />
+		
+		<div class="instagram-wrapper" data-id="{{ section.id }}">
+		
+			<div id="instafeed-{{ section.id }}" class="row{% if section.settings.instagram-homepage-width == 'full-width' %} instagram-wrapper--no-padding{% endif %}"></div>
+		
+		</div>
+	
+{% else %}
+
+	<div class="instagram-wrapper" data-id="{{ section.id }}">		
+		
+		<div id="instafeed-{{ section.id }}" class="row{% if section.settings.remove-padding %} instagram-wrapper--no-padding{% endif %}">
+		
+			<div class="col-md-2 col-sm-2 col-xs-6 instagram-indiv">{{ 'image' | placeholder_svg_tag: 'icon icon--placeholder' }}</div>
+			<div class="col-md-2 col-sm-2 col-xs-6 instagram-indiv">{{ 'image' | placeholder_svg_tag: 'icon icon--placeholder' }}</div>
+			<div class="col-md-2 col-sm-2 col-xs-6 instagram-indiv">{{ 'image' | placeholder_svg_tag: 'icon icon--placeholder' }}</div>
+			<div class="col-md-2 col-sm-2 col-xs-6 instagram-indiv">{{ 'image' | placeholder_svg_tag: 'icon icon--placeholder' }}</div>
+			<div class="col-md-2 col-sm-2 col-xs-6 instagram-indiv">{{ 'image' | placeholder_svg_tag: 'icon icon--placeholder' }}</div>
+			<div class="col-md-2 col-sm-2 col-xs-6 instagram-indiv">{{ 'image' | placeholder_svg_tag: 'icon icon--placeholder' }}</div>
+		</div>
+	
+	</div>
+	
+{% endif %}	
+
+		</div>
+	</div>
+</div>
+
+{% assign instaimage = '{{image}}' %}
+{% assign instaurl = '{{link}}' %}
+
+
+{% schema %}
+{
+  "name": "Instagram",
+  "class": "homepage-section--instagram-wrapper",    
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "Instagram"
+    },
+    {
+      "type": "checkbox",
+      "id": "show-title",
+      "label": "Show title",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "instagram-access-token",
+      "label": "Access token [(?)](http:\/\/www.wetheme.com\/instagram-integration\/)"
+    },
+    {
+      "type": "select",
+      "id": "instagram-homepage-width",
+      "label": "Width",
+      "options": [
+        {
+          "value": "fixed",
+          "label": "Fixed"
+        },
+        {
+          "value": "full-width",
+          "label": "Full width"
+        }
+      ],
+      "default": "fixed"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Instagram",
+      "category": "Social media"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,19 @@
+#wholesale {
+  #main-navigation-wrapper {
+    margin-bottom: 0;
+  }
+}
+
+#wholesale-inquiry {
+  .wholesale-inquiry-container {
+    width: 100%;
+    
+    iframe {
+      width: 1px;
+      min-width: 100%;
+      *width: 100%;
+      height: 2580px;
+    }
+  }
+}
+

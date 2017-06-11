@@ -1,0 +1,41 @@
+$teal: #29838f;
+$white: #ffffff;
+$dark-tan: #9e9489;
+$brown: #716559;
+
+#product-box {
+ .selector-wrapper {
+    input {
+      border-radius: 0;
+      height: 42.36px;
+    }
+   }
+  
+  hr {
+   border-color: $dark-tan; 
+  }
+  
+  .caps-container {
+    display: table;
+   	
+    .row {
+      .add-on-cell {
+        display: table-cell;
+        vertical-align: middle;
+        float: none;
+      }
+      
+      hr {
+        margin: 0 15px 0 15px;
+        
+        &.top {
+         margin-bottom: 20px; 
+        }
+        
+        &.bottom {
+         margin-top: 20px; 
+        }
+      }
+    }
+  }
+}

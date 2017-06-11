@@ -1,0 +1,214 @@
+  {%- assign product_thumb_size = '160x160' -%}
+  {%- assign product_image_zoom_size = '1024x1024' -%}
+  {%- assign current_variant = product.selected_or_first_available_variant -%}
+
+  {% case section.settings.image_size %}
+    {% when 'small' %}
+      {%- assign product_description_width = 'col-md-7' -%}
+      {%- assign product_image_size = '345x' -%}
+    {% when 'medium' %}
+      {%- assign product_description_width = 'col-md-6' -%}
+      {%- assign product_image_size = '530x' -%}
+    {% when 'large' %}
+      {%- assign product_description_width = 'col-md-4' -%}
+      {%- assign product_image_size = '720x' -%}
+  {% endcase %}
+
+<meta itemprop="url" content="{{ shop.url }}{{ product.url }}">
+<meta itemprop="image" content="{{ product.featured_image.src | img_url: 'grande' }}">
+
+<div class="row landing-page" id="product-box" data-section-id="{{ section.id }}">
+  
+  	<h1 class="custom-font product-description-header">{{ product.title }}</h1>
+	
+	<div class="product-images">
+
+	<div class="sale-badge product-price__sale-label-{{ section.id }}{% unless current_variant.compare_at_price > current_variant.price %} hide{% endunless %}">{{ 'products.general.sale' | t }}</div>
+		
+		<!-- The first image pulled from the product is a large image (480x480), subsequent images are "compact" which is 160x160 -->
+
+			{% for image in product.images %}
+				{% if forloop.first %}
+
+						<img src="{{ image | product_img_url: 'original'}}" alt="{{ image.alt | escape }}" class="full-width"/>
+	
+				{% endif %}
+			{% endfor %}
+
+	
+	</div>
+		
+	
+		
+			<section class="entry-content product-description-main-wrapper">
+
+              <h5 class="custom-font compare-at-price js original-amount">
+                {% if current_variant.compare_at_price > current_variant.price %}
+                <span class="money">{{ current_variant.compare_at_price | money }}</span>
+                {% endif %}
+              </h5>
+              <h1 class="custom-font js discount-amount" id="price-field"><span class="money">{{ current_variant.price | money }}</span></h3>
+              
+              <a href="https://www.elementalbottles.com/products/landing-page-offer-1-elemental-stainless-steel-water-bottle-25oz-matte-black" class="teal-button">Order Now</a>
+						
+						{{ product.description }}
+			
+                  {% if settings.social_sharing_products %}
+                      {% if template contains 'article' or template contains 'blog' %}
+
+                        {% capture permalinkURL %}{{ shop.url }}{{ article.url }}{% endcapture %}
+                        {% capture shareTitle %}{{ article.title }}{% endcapture %}
+                        {% capture shareImage %}{{ article | img_url: '1024x1024' }}{% endcapture %}	
+
+                        {% elsif template contains 'product' %}
+
+                        {% capture permalinkURL %}{{ shop.url }}{{ product.url }}{% endcapture %}
+                        {% capture shareTitle %}{{ product.title }}{% endcapture %}
+                        {% capture shareImage %}{{ product.featured_image | product_img_url: 'original' }}{% endcapture %}
+
+                        {% endif %}
+
+                        <div id="sharing" class="social-sharing" data-permalink="{{ permalinkURL }}">
+
+                            {% if settings.share_facebook %}
+                            <!-- https://developers.facebook.com/docs/plugins/share-button/ -->
+                            <a target="_blank" href="//www.facebook.com/sharer.php?u={{ permalinkURL }}" class="share-facebook">
+                            <span class="icon icon-facebook" aria-hidden="true"></span>
+                            <span class="share-title">Share</span>
+                            </a>
+                            {% endif %}
+
+                            {% if settings.share_twitter %}
+                            <!-- https://dev.twitter.com/docs/intents -->
+                            <a target="_blank" href="//twitter.com/share?url={{ permalinkURL }}&amp;text={{ shareTitle }}" class="share-twitter">
+                            <span class="icon icon-twitter" aria-hidden="true"></span>
+                            <span class="share-title">Tweet</span>
+                            </a>
+                            {% endif %}
+
+                            {% if settings.share_google %}
+                            <!--
+                            https://developers.pinterest.com/pin_it/
+                            Pinterest get data from the same Open Graph meta tags Facebook uses
+                            -->
+                            <a target="_blank" href="//pinterest.com/pin/create/button/?url={{ permalinkURL }}&amp;media={{ shareImage }}&amp;description={{ product.title | escape }}" class="share-pinterest">
+                            <span class="icon icon-pinterest" aria-hidden="true"></span>
+                            <span class="share-title">Pin it</span>
+                            </a>
+                            {% endif %}    
+
+                        </div>
+                  {% endif %}
+
+
+              </section>
+
+
+<script>
+    window.theme = {
+        strings: {
+            addToCart: {{ 'products.product.add_to_cart' | t | json }},
+            soldOut: {{ 'products.product.sold_out' | t | json }},
+            unavailable: {{ 'products.product.unavailable' | t | json }},
+            showMore: {{ 'general.filters.show_more' | t | json }},
+            showLess: {{ 'general.filters.show_less' | t | json }}
+        },
+        moneyFormat: {{ shop.money_format | json }}
+    };
+</script>
+
+
+<script>
+  $("#purchase").click(function() {
+    
+    setTimeout(function(){
+		location.href = "/cart";
+    },800); 
+  });  
+  
+  $("#bottom-purchase").click(function() {
+  	$("#purchase").trigger("click");
+  });
+</script>
+  
+{% unless product.empty? %}
+  <script type="application/json" id="ProductJson-{{ section.id }}">
+    {{ product | json }}
+  </script>
+{% endunless %}
+
+{% schema %}
+{
+  "name": "Product pages",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "show-vendor",
+      "label": "Show vendor",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "show_quantity_selector",
+      "label": "Show quantity selector",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "show_variant_labels",
+      "label": "Show variant labels",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "open_cart_when_added",
+      "label": "Open cart when item is added",
+      "default": true
+    },
+	{
+	  "type": "header",
+	  "content": "Product images"
+	},
+    {
+      "type": "select",
+      "id": "image_size",
+      "label": "Image size",
+      "options": [
+        {
+          "value": "small",
+          "label": "Small"
+        },
+        {
+          "value": "medium",
+          "label": "Medium"
+        },
+        {
+          "value": "large",
+          "label": "Large"
+        }
+      ],
+      "default": "medium"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_zoom",
+      "label": "Enable image zoom",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Reviews"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_reviews",
+      "label": "Enable",
+      "default": false
+    },
+    {
+      "type": "paragraph",
+      "content": "You will need to install Shopify's [Product Reviews app](https://apps.shopify.com/product-reviews) before enabling this option."
+    }
+  ]
+}
+{% endschema %}

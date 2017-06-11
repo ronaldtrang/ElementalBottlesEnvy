@@ -1,0 +1,99 @@
+{% layout 'theme.alternate.LandingPageV2' %}
+
+<div class="landing-page-v2">
+    <div class="container-fluid">
+      <div class="title-container">
+      <h1 class="text-center">LIMITED OFFER - 25oz Elemental Stainless Steel Water Bottle</h1>
+      </div>
+    </div>
+  	<div class="container-fluid">
+      <img id="desktopHero" src="https://cdn.shopify.com/s/files/1/1462/0790/files/Elemental_Website_Banner_4.jpg?11444533491644671578" alt="hydrate-in-style-banner" class="full-width" />
+      <img id="mobileHero" src="https://cdn.shopify.com/s/files/1/1462/0790/files/Hydrate_in_Style_Vertical.jpg?6147892105048729872" alt="hydrate-in-style-banner" class="full-width" />
+  	</div>
+  	<div class="container-fluid">
+      <div class="get-a-bottle-container">
+        <h2 class="text-center">Get a bottle for  you and a friend</h2>
+        <p class="m-t-20">We're offering free shipping when you order two elemental bottles. Your choice between three bottle colors and three caps. Did we mention that we have limited edition teal bottles?</p>
+      </div>
+  	</div>
+    <div class="container-fluid m-b-20">
+      <img src="https://cdn.shopify.com/s/files/1/1462/0790/files/Icon_Banner.png?10074505754897575361" alt="icon-banner" class="icon-banner full-width"/>
+    </div>
+  	<div id="bottle-container" class="bottle-container"></div>
+  	<div class="container-fluid">
+      <img src="https://cdn.shopify.com/s/files/1/1462/0790/files/rock_climbing.jpg?17220520707138096625" alt="rock-climbing-image" class="full-width" />
+    </div>
+  	<div class="container-fluid">
+      <div class="description-container text-center">
+        <p>Premium quality 25oz (750ml)  insulated stainless steel elemental bottles are carefully crafted, BPA free and food safe. Beverages can stay cold for up to 24 hours or hot for up to 12 hours. At elemental, we not only focus on quality and functionality of the bottle but also on our customers' need of a multipurpose bottle. The bottle is designed to be suitable to be used in any daily activity, from school work to office work, to the gym and a short hike. There is no need to have multiple bottles for different purposes, this bottle will do it all.</p>
+        <p class="m-t-20">Brewed coffee or simply, water. <strong><em>Hint: It makes a perfect wine growler since it holds 750ml, the same volume as a regular wine bottle.</em></strong> </p>
+        <p class="m-t-20">The bottle is made with double-walled technology preventing condensation from forming on the outside. This technology also greatly enhances the ability to hold the temperature of the liquid contained in the bottle.</p>
+      </div>
+  	</div>
+  	<div class="container-fluid">
+      <img src="https://cdn.shopify.com/s/files/1/1462/0790/files/Surf.jpg?17220520707138096625" alt="surf-image" class="full-width" />
+    </div>
+    <div class="container-fluid text-center">
+      <div class="measurement-container">
+        <p><h3 class="m-b-20">Measurements</h3></p>
+        <p>Weight: 13.5oz</p>
+        <p>Volume: 750 ml (25oz)</p>
+        <p>Height without cap: 10"</p>
+        <p>Height with cap: 12"</p>
+     	<p>Diameter: 3"</p>
+      </div>
+      <p class="warranty-text">100% love guarantee and Limited LIFETIME warranty which covers any performance defect and not normal wear and tear. <a href="/pages/warranty">Click here</a> for details.
+    </div>
+  	<div class="p-b-50 social-share-container container-fluid">
+      <h3 class="text-center"><strong>Share this with your friends</strong></h3>
+      <ul class="p-t-20 social-sharing">
+        <li>
+          <a target="_blank" href="//www.facebook.com/sharer.php?u={{shop.url}}{{page.url}}" class="share-facebook social-share-button facebook-button">
+            <i class="fa fa-facebook"></i>
+            <span>Share</span>
+          </a>
+        </li>
+        <li>
+          <a href="https://twitter.com/intent/tweet?url={{ shop.url }}{{page.url}}&text={{page.title}}" class="social-share-button twitter-button">
+            <i class="fa fa-twitter"></i>
+            <span>Tweet</span>
+          </a>
+        </li>
+        <li>
+          <a href="https://www.pinterest.com/pin/create/button/" data-pin-do="buttonPin" data-pin-custom="true" class="social-share-button pinterest-button">
+            <i class="fa fa-pinterest-p"></i>
+            <span>Pin It</span>
+          </a>
+        </li>
+      </ul>
+  	</div>
+  	<div class="cart-container">
+      <a href="/cart" title="Go to cart">
+        <span id="cartCount" class="cart-count"></span>
+        <i class="fa fa-shopping-cart fa-2x"></i>
+      </a>
+    </div>
+	<div class="cart-container-mobile">
+      <a href="/cart" title="Go to cart">
+		<span class="cart-count"></span>
+        <i class="fa fa-shopping-cart"></i>
+      </a>
+    </div>
+</div>
+
+<div id="messageModal" class="modal fade" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Sorry</h4>
+      </div>
+      <div class="modal-body">
+        <p id="messageBody"></p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Okay</button>
+      </div>
+    </div>
+  </div>
+</div>

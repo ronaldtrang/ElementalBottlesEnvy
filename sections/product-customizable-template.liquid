@@ -1,0 +1,343 @@
+  {%- assign product_thumb_size = '160x160' -%}
+  {%- assign product_image_zoom_size = '1024x1024' -%}
+  {%- assign current_variant = product.selected_or_first_available_variant -%}
+
+  {% case section.settings.image_size %}
+    {% when 'small' %}
+      {%- assign product_image_width = 'col-md-5' -%}
+      {%- assign product_description_width = 'col-md-7' -%}
+      {%- assign product_image_size = '345x' -%}
+    {% when 'medium' %}
+      {%- assign product_image_width = 'col-md-6' -%}
+      {%- assign product_description_width = 'col-md-6' -%}
+      {%- assign product_image_size = '530x' -%}
+    {% when 'large' %}
+      {%- assign product_image_width = 'col-md-8' -%}
+      {%- assign product_description_width = 'col-md-4' -%}
+      {%- assign product_image_size = '720x' -%}
+  {% endcase %}
+
+<meta itemprop="url" content="{{ shop.url }}{{ product.url }}">
+<meta itemprop="image" content="{{ product.featured_image.src | img_url: 'grande' }}">
+
+<div class="row">
+	<div class="col-md-12">
+		
+		<nav class="breadcrumb" role="navigation" aria-label="breadcrumbs">
+		  <a href="/" title="{{ 'general.breadcrumbs.back_home' | t }}">{{ 'general.breadcrumbs.home' | t }}</a>
+		
+		    {% if collection %}
+		      <span aria-hidden="true">&rsaquo;</span>
+		      {% if collection.handle %}
+		        {% capture url %}/collections/{{ collection.handle }}{% endcapture %}
+		        {{ collection.title | link_to: url }}
+		      {% endif %}
+		    {% endif %}
+		    <span aria-hidden="true">&rsaquo;</span>
+		    <span>{{ product.title }}</span>
+		
+		</nav>
+		
+	</div>
+</div>
+
+<div class="row" id="product-box" data-section-id="{{ section.id }}">
+	
+	<div class="{{ product_image_width }} product-images">
+
+	<div class="sale-badge product-price__sale-label-{{ section.id }}{% unless current_variant.compare_at_price > current_variant.price %} hide{% endunless %}">{{ 'products.general.sale' | t }}</div>
+		
+		<!-- The first image pulled from the product is a large image (480x480), subsequent images are "compact" which is 160x160 -->
+		<div id="product_images">
+			{% for image in product.images %}
+				{% if forloop.first %}
+				<!--
+					<a href="{{ image | product_img_url: 'original' }}" title="{{ image.alt | escape }}" id="zoom1" class="cloud-zoom" rel="position: 'inside', showTitle: false">
+						<img src="{{ image | product_img_url: 'original'}}" alt="{{ image.alt | escape }}" class="product-main-image"/>
+					</a>
+				-->
+					
+					{% assign featured_image = product.selected_or_first_available_variant.featured_image | default: product.featured_image %}
+					<div class="featured-image-div" {% if section.settings.enable_zoom %}data-zoom="true"{% endif %}>
+						<img id="FeaturedImage-{{ section.id }}" src="{{ featured_image | img_url: 'master' }}" alt="{{ featured_image.alt | escape }}" class="product-main-image" />
+					</div>
+					
+				{% endif %}
+			{% endfor %}
+			
+			{% if product.images.size > 1 %}
+			<div class="row">
+				<ul id="product-thumbnails">
+				{% for image in product.images %}
+					<li class="col-md-3 col-sm-4{% cycle ' alpha clearcolumn', '', '', ' omega' %}">
+						<a href="{{ image | product_img_url: 'original' }}" title="{{ image.alt | escape }}" class="image-swap">
+							<img src="{{ image | product_img_url: 'compact'}}" alt="{{ image.alt | escape }}" />
+						</a>
+					</li>
+				{% endfor %}
+				</ul>
+			</div>
+			{% endif %}
+			
+		</div>
+		
+		<div id="mobile-product-images">
+			<div class="flexslider-container col-md-12">
+				<div class="flexslider mobile-product-slider">				
+					<ul id="product-thumbnails" class="slides">
+						{% for image in product.images %}
+							<li>
+								<img src="{{ image | product_img_url: 'grande'}}" alt="{{ image.alt | escape }}" class="img-responsive" />
+							</li>
+						{% endfor %}
+					</ul>
+				</div>
+			</div>
+		</div>
+	
+	</div>
+		
+	<div class="{{ product_description_width }}">
+		
+			<section class="entry-content product-description-main-wrapper">
+			
+			{% if section.settings.show-vendor %}
+				<div class="indiv-product-vendor-text">{{ product.vendor }}</div>
+			{% endif %}
+
+			<h1 class="custom-font product-description-header">{{ product.title }}</h1>
+
+						{% if product.available %}
+
+
+
+						<form action="/cart/add" method="post" id="add-to-cart-form" {% unless section.settings.show_variant_labels %}class="product-form--hide-variant-labels"{% endunless %}>
+
+						<h5 class="custom-font compare-at-price js">
+							{% if current_variant.compare_at_price > current_variant.price %}
+								<span class="money">{{ current_variant.compare_at_price | money }}</span>
+							{% endif %}
+						</h5>
+						<h3 class="custom-font js" id="price-field"><span class="money">{{ current_variant.price | money }}</span></h3>
+
+
+
+							<div class="row">
+
+							<div class="col-md-6 col-sm-12 col-xs-12">
+								{% if product.variants.size > 1  %}
+									{% for option in product.options_with_values %}
+										<div class="selector-wrapper">
+											<label for="SingleOptionSelector-{{ forloop.index0 }}">{{ option.name }}</label>
+											<select class="form-control" id="SingleOptionSelector-{{ forloop.index0 }}">
+													{% for value in option.values %}
+														<option {% if option.selected_value == value %}selected{% endif %}>{{ value }}</option>
+													{% endfor %}
+											</select>
+										</div>
+									{% endfor %}
+								{% endif %}
+
+								<select name="id" id="ProductSelect-{{ section.id }}" data-section="{{ section.id }}" class="form-control original-select product-form__variants no-js">
+									{% for variant in product.variants %}
+										{% if variant.available %}
+											<option {% if variant == current_variant %} selected="selected" {% endif %} value="{{ variant.id }}">
+												{{ variant.title }} - <span class="money">{{ variant.price | money }}</span>
+											</option>
+										{% else %}
+											<option disabled="disabled">{{ variant.title }} - {{ 'products.product.sold_out' | t }}</option>
+										{% endif %}
+									{% endfor %}
+								</select>
+
+					        {% if section.settings.show_quantity_selector %}
+					        <div class="selector-wrapper">
+						        <label for="Quantity">{{ 'products.product.quantity' | t }}</label>
+						        <input type="number" id="Quantity" name="quantity" value="1" min="1" class="quantity-selector">
+							</div>
+							{% endif %}
+                              
+                            <p class="line-item-property__field">
+                              <div class="selector-wrapper">
+                                <label for="custom-text">CUSTOM TEXT</label>
+                                <input id="custom-text" class="form-control" type="text" name="properties[Custom Text]" maxlength="12" placeholder="Maximum characters of 12">
+                              </div>
+                            </p>
+
+						    <input type="submit" name="add" value="{{ 'products.product.add_to_cart' | t }}" id="purchase" class="btn btn-success custom-font"
+						           data-use-ajax="{% if section.settings.open_cart_when_added %}true{% else %}false{% endif %}"/>
+						    
+						    </div>
+						    
+						    </div>
+						
+						</form>
+						
+						
+						{% else %}
+						
+						<div class="col-md-12 col-sm-12 col-xs-12">
+						
+							<div class="product-out-of-stock">{{ 'products.product.sorry_stock' | t }}</div>
+						
+						</div>
+						
+						{% endif %}
+						
+						<div class="product-description-wrapper">
+							{{ product.description }}
+						</div>
+
+		{% if settings.social_sharing_products %}
+			{% if template contains 'article' or template contains 'blog' %}
+
+	{% capture permalinkURL %}{{ shop.url }}{{ article.url }}{% endcapture %}
+	{% capture shareTitle %}{{ article.title }}{% endcapture %}
+	{% capture shareImage %}{{ article | img_url: '1024x1024' }}{% endcapture %}	
+
+{% elsif template contains 'product' %}
+
+	{% capture permalinkURL %}{{ shop.url }}{{ product.url }}{% endcapture %}
+	{% capture shareTitle %}{{ product.title }}{% endcapture %}
+	{% capture shareImage %}{{ product.featured_image | product_img_url: 'original' }}{% endcapture %}
+		
+{% endif %}
+
+<div id="sharing" class="social-sharing" data-permalink="{{ permalinkURL }}">
+
+	{% if settings.share_facebook %}
+	<!-- https://developers.facebook.com/docs/plugins/share-button/ -->
+	<a target="_blank" href="//www.facebook.com/sharer.php?u={{ permalinkURL }}" class="share-facebook">
+	<span class="icon icon-facebook" aria-hidden="true"></span>
+	<span class="share-title">Share</span>
+	</a>
+	{% endif %}
+	
+	{% if settings.share_twitter %}
+	<!-- https://dev.twitter.com/docs/intents -->
+	<a target="_blank" href="//twitter.com/share?url={{ permalinkURL }}&amp;text={{ shareTitle }}" class="share-twitter">
+	<span class="icon icon-twitter" aria-hidden="true"></span>
+	<span class="share-title">Tweet</span>
+	</a>
+	{% endif %}
+	
+	{% if settings.share_google %}
+	<!--
+	https://developers.pinterest.com/pin_it/
+	Pinterest get data from the same Open Graph meta tags Facebook uses
+	-->
+	<a target="_blank" href="//pinterest.com/pin/create/button/?url={{ permalinkURL }}&amp;media={{ shareImage }}&amp;description={{ product.title | escape }}" class="share-pinterest">
+	<span class="icon icon-pinterest" aria-hidden="true"></span>
+	<span class="share-title">Pin it</span>
+	</a>
+	{% endif %}    
+
+</div>
+		{% endif %}
+		
+		{% if section.settings.show_reviews %}
+			<div id="shopify-product-reviews" data-id="{{product.id}}">{{ product.metafields.spr.reviews }}</div>
+		{% endif %}
+		
+		</div>		
+		
+	</section>
+	
+	</div>
+
+
+
+<script>
+    window.theme = {
+        strings: {
+            addToCart: {{ 'products.product.add_to_cart' | t | json }},
+            soldOut: {{ 'products.product.sold_out' | t | json }},
+            unavailable: {{ 'products.product.unavailable' | t | json }},
+            showMore: {{ 'general.filters.show_more' | t | json }},
+            showLess: {{ 'general.filters.show_less' | t | json }}
+        },
+        moneyFormat: {{ shop.money_format | json }}
+    };
+</script>
+
+{% unless product.empty? %}
+  <script type="application/json" id="ProductJson-{{ section.id }}">
+    {{ product | json }}
+  </script>
+{% endunless %}
+
+{% schema %}
+{
+  "name": "Product pages",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "show-vendor",
+      "label": "Show vendor",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "show_quantity_selector",
+      "label": "Show quantity selector",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "show_variant_labels",
+      "label": "Show variant labels",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "open_cart_when_added",
+      "label": "Open cart when item is added",
+      "default": true
+    },
+	{
+	  "type": "header",
+	  "content": "Product images"
+	},
+    {
+      "type": "select",
+      "id": "image_size",
+      "label": "Image size",
+      "options": [
+        {
+          "value": "small",
+          "label": "Small"
+        },
+        {
+          "value": "medium",
+          "label": "Medium"
+        },
+        {
+          "value": "large",
+          "label": "Large"
+        }
+      ],
+      "default": "medium"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_zoom",
+      "label": "Enable image zoom",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Reviews"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_reviews",
+      "label": "Enable",
+      "default": false
+    },
+    {
+      "type": "paragraph",
+      "content": "You will need to install Shopify's [Product Reviews app](https://apps.shopify.com/product-reviews) before enabling this option."
+    }
+  ]
+}
+{% endschema %}

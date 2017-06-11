@@ -1,0 +1,754 @@
+{
+  "current": {
+    "font-colour": "#716559",
+    "link-colour": "#29838f",
+    "active-link-colour": "#9e9489",
+    "sale-label-colour": "#f26c4f",
+    "header-background-colour": "rgba(0,0,0,0)",
+    "header-text-colour": "#716559",
+    "main-menu-background-colour": "#b9b1a9",
+    "main-menu-text-colour": "#716559",
+    "bg_colour": "#efeae5",
+    "indiv_product_shadowing": false,
+    "logo_colour": "#252525",
+    "logo_hover_colour": "#000000",
+    "add-to-cart-background-colour": "#29838f",
+    "add-to-cart-background-hover-colour": "#9e9489",
+    "add-to-cart-text-colour": "#ffffff",
+    "color_image_overlay_text": "#ffffff",
+    "color_image_overlay": "#000",
+    "image_overlay_opacity": "0.6",
+    "pop-up-text-background-colour": "#ffffff",
+    "pop-up-text-header-text-colour": "#000",
+    "typography-heading-font": "typography-heading-open-sans",
+    "title-bar-styling": "title-bar-lowercase",
+    "typography-body-font": "typography-body-open-sans",
+    "typography-body-font-size": "14px",
+    "typography-menu-font-size": "14px",
+    "menu-case": "menu-upper-case",
+    "menu-border": true,
+    "header_font_size": "30px",
+    "header_font_style": "normal",
+    "pop-up-text-header-text-size": "48px",
+    "pop-up-text-description-text-size": "14px",
+    "sm_facebook_link": "https:\/\/www.facebook.com\/elementalbottles\/",
+    "sm_twitter_link": "",
+    "sm_youtube_link": "",
+    "sm_flickr_link": "",
+    "sm_pinterest_link": "",
+    "sm_instagram_link": "https:\/\/www.instagram.com\/elementalbottles\/",
+    "sm_google_plus_link": "",
+    "sm_snapchat_link": "",
+    "sm_tumblr_link": "",
+    "social_sharing_products": true,
+    "social_sharing_blog": true,
+    "share_facebook": true,
+    "share_twitter": true,
+    "share_google": true,
+    "popup--enable": false,
+    "pop-up-time": "7",
+    "popup--show-image": false,
+    "popup-newsletter-top": "",
+    "pop-up-text-header-text": "",
+    "pop-up-text-description-text": "",
+    "popup--show-social-icons": false,
+    "popup--show-newsletter": true,
+    "show_multiple_currencies": false,
+    "currency_format": "money_format",
+    "supported_currencies": "INR GBP CAD USD AUD EUR JPY",
+    "default_currency": "USD",
+    "favicon": "shopify:\/\/shop_images\/elemental_logo_drop-18_46ff0484-7ff8-4c2a-9ad4-c785d14d0e17.png",
+    "checkout_header_image": "",
+    "checkout_logo_image": "shopify:\/\/shop_images\/elemental_logo_teal_821db173-240f-400a-9032-a2ce5f189f4b.png",
+    "checkout_logo_position": "left",
+    "checkout_logo_size": "medium",
+    "checkout_body_background_image": "",
+    "checkout_body_background_color": "#fff",
+    "checkout_input_background_color_mode": "white",
+    "checkout_sidebar_background_image": "",
+    "checkout_sidebar_background_color": "#fafafa",
+    "checkout_heading_font": "Helvetica Neue",
+    "checkout_body_font": "Helvetica Neue",
+    "checkout_accent_color": "#1990c6",
+    "checkout_button_color": "#1990c6",
+    "checkout_error_color": "#ff6d6d",
+    "sections": {
+      "header": {
+        "type": "header",
+        "settings": {
+          "logo": "shopify:\/\/shop_images\/elemental_logo_teal.png",
+          "logo_max_width": "550",
+          "logo_padding": "0",
+          "logo-placement": "below-header",
+          "top_bar_linklist": "envy-header-menu",
+          "main_linklist": "envy-main-menu",
+          "menu_padding": "10"
+        }
+      },
+      "image-bar": {
+        "type": "image-bar",
+        "blocks": {
+          "image-bar-0": {
+            "type": "image",
+            "settings": {
+              "image": "",
+              "link": ""
+            }
+          },
+          "image-bar-1": {
+            "type": "image",
+            "settings": {
+              "image": "",
+              "link": ""
+            }
+          },
+          "image-bar-2": {
+            "type": "image",
+            "settings": {
+              "image": "",
+              "link": ""
+            }
+          },
+          "image-bar-3": {
+            "type": "image",
+            "settings": {
+              "image": "",
+              "link": ""
+            }
+          }
+        },
+        "block_order": [
+          "image-bar-0",
+          "image-bar-1",
+          "image-bar-2",
+          "image-bar-3"
+        ],
+        "settings": {}
+      },
+      "feature-row": {
+        "type": "feature-row",
+        "settings": {
+          "image": "",
+          "layout": "left",
+          "title": "Text and image",
+          "text_block": "<p>Pair large text with an image to give focus to your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
+          "button_label": "",
+          "button_link": ""
+        }
+      },
+      "featured-blog": {
+        "type": "featured-blog",
+        "settings": {
+          "title": "From the blog",
+          "blog": "news",
+          "post_limit": "3"
+        }
+      },
+      "logo-bar": {
+        "type": "logo-bar",
+        "settings": {
+          "title": "As seen in"
+        }
+      },
+      "instagram": {
+        "type": "instagram",
+        "settings": {
+          "title": "Instagram",
+          "show-title": true,
+          "instagram-access-token": "4199504615.cf70533.3ec6b444710d4aa3855e00c4263f54da",
+          "instagram-homepage-width": "fixed"
+        }
+      },
+      "footer": {
+        "type": "footer",
+        "blocks": {
+          "1485113906460": {
+            "type": "text",
+            "settings": {
+              "title": "Contact us",
+              "richtext": "<p>Share store details, promotions, or brand content with your customers.<\/p>"
+            }
+          },
+          "1485113874529": {
+            "type": "menu",
+            "settings": {
+              "menu_title": "Links",
+              "footer_linklist": "envy-footer-menu"
+            }
+          },
+          "1485113848055": {
+            "type": "newsletter",
+            "settings": {
+              "footer_newsletter_description": ""
+            }
+          },
+          "1485113855109": {
+            "type": "social",
+            "settings": {}
+          }
+        },
+        "block_order": [
+          "1485113906460",
+          "1485113874529",
+          "1485113848055",
+          "1485113855109"
+        ],
+        "settings": {
+          "show_methods_of_payment": true
+        }
+      },
+      "announcement-bar": {
+        "type": "announcement-bar",
+        "settings": {
+          "message_text": "SUBSCRIBE TO OUR NEWSLETTER FOR CHANCE TO WIN A FREE BOTTLE",
+          "message_link": "https:\/\/factoryenova.us7.list-manage.com\/subscribe\/post?u=ba9f0040741476b1181101097&id=ae2b926974",
+          "notification-bar--background-colour": "#464646",
+          "notification-bar--text-colour": "#fff"
+        }
+      },
+      "collection-template": {
+        "type": "collection-template",
+        "settings": {
+          "grid": "3",
+          "rows": "6",
+          "show-vendor": false,
+          "enable-hover-effect": false,
+          "collection_image_enable": true,
+          "tags_enable": true
+        }
+      },
+      "1483404640157": {
+        "type": "feature-row",
+        "settings": {
+          "image": "shopify:\/\/shop_images\/elemental_logo_seal-12_e9b05425-a473-4294-9d2e-97ba87b6295c.png",
+          "layout": "left",
+          "title": "About Us",
+          "text_block": "<p>\"Elemental: Basic or primary, an ingredient from which all other structures are compounded\"<\/p>",
+          "button_label": "Read More",
+          "button_link": "shopify:\/\/pages\/about-us"
+        }
+      },
+      "product-template": {
+        "type": "product-template",
+        "settings": {
+          "show-vendor": false,
+          "show_quantity_selector": false,
+          "show_variant_labels": true,
+          "open_cart_when_added": true,
+          "image_size": "medium",
+          "enable_zoom": true,
+          "show_reviews": false
+        }
+      },
+      "1485482904426": {
+        "type": "collection",
+        "settings": {
+          "title": "Featured products",
+          "show-vendor": false,
+          "enable-hover-effect": false,
+          "collection": "shop",
+          "grid": "3",
+          "rows": "1"
+        }
+      },
+      "blog-template": {
+        "type": "blog-template",
+        "settings": {
+          "blog-posts-per-page": "3",
+          "blog-sidebar-image": "",
+          "blog-sidebar-link": "shopify:\/\/blogs\/news\/the-stainless-steel-water-bottle-in-black",
+          "blog_sidebar_title": "",
+          "blog_sidebar_desc": "",
+          "show_author_name": false,
+          "show_blog_tags": true,
+          "show_recent_posts": true
+        }
+      },
+      "article-template": {
+        "type": "article-template",
+        "settings": {
+          "blog-sidebar-image": "",
+          "blog-sidebar-link": "",
+          "blog_sidebar_title": "",
+          "blog_sidebar_desc": "",
+          "show_author_name": false,
+          "show_blog_tags": true,
+          "show_recent_posts": true
+        }
+      },
+      "1487447706596": {
+        "type": "text-over-image",
+        "settings": {
+          "image": "shopify:\/\/shop_images\/cropped_10-1.jpg",
+          "parallax": false,
+          "title": "",
+          "text": "",
+          "alignment": "center",
+          "hero_size": "x-small",
+          "text-over-image-width": "full-width",
+          "button_label": "",
+          "button_link": ""
+        }
+      },
+      "1497126022254": {
+        "type": "hero",
+        "settings": {
+          "desktopImage": "shopify:\/\/shop_images\/Elemental_Website_Banner_4.jpg",
+          "mobileImage": "shopify:\/\/shop_images\/Hydrate_in_Style_Vertical.jpg"
+        }
+      }
+    },
+    "content_for_index": [
+      "1497126022254",
+      "1485482904426",
+      "1483404640157",
+      "instagram",
+      "featured-blog",
+      "1487447706596"
+    ]
+  },
+  "presets": {
+    "Stockholm": {
+      "font-colour": "#000000",
+      "link-colour": "#000000",
+      "active-link-colour": "#000000",
+      "sale-label-colour": "#f26c4f",
+      "header-background-colour": "#ebebeb",
+      "header-text-colour": "#AAB1B4",
+      "bg_colour": "#ffffff",
+      "indiv_product_shadowing": true,
+      "logo_colour": "#252525",
+      "logo_hover_colour": "#000000",
+      "add-to-cart-background-colour": "#5cb85c",
+      "add-to-cart-background-hover-colour": "#449d44",
+      "add-to-cart-text-colour": "#ffffff",
+      "typography-heading-font": "typography-heading-montserrat",
+      "title-bar-styling": "title-bar-diagonal-background",
+      "typography-body-font": "typography-body-muli",
+      "typography-body-font-size": "14px",
+      "typography-menu-font-size": "14px",
+      "menu-case": "menu-upper-case",
+      "header_font_size": "30px",
+      "header_font_style": "normal",
+      "sections": {
+        "header": {
+          "type": "header",
+          "settings": {
+            "top_bar_linklist": "",
+            "main_linklist": "main-menu"
+          }
+        },
+        "slideshow": {
+          "type": "slideshow",
+          "blocks": {
+            "slideshow-0": {
+              "type": "image",
+              "settings": {}
+            },
+            "slideshow-1": {
+              "type": "image",
+              "settings": {}
+            }
+          },
+          "block_order": [
+            "slideshow-0",
+            "slideshow-1"
+          ],
+          "settings": {
+            "slider-width": "full-width"
+          }
+        },
+        "image-bar": {
+          "type": "image-bar",
+          "blocks": {
+            "image-bar-0": {
+              "type": "image",
+              "settings": {}
+            },
+            "image-bar-1": {
+              "type": "image",
+              "settings": {}
+            }
+          },
+          "block_order": [
+            "image-bar-0",
+            "image-bar-1"
+          ],
+          "settings": {}
+        },
+        "collection": {
+          "type": "collection",
+          "settings": {
+            "rows": "2"
+          }
+        },
+        "text-over-image": {
+          "type": "text-over-image",
+          "settings": {}
+        },
+        "feature-row": {
+          "type": "feature-row",
+          "settings": {}
+        },
+        "instagram": {
+          "type": "instagram",
+          "settings": {}
+        },
+        "footer": {
+          "type": "footer",
+          "settings": {}
+        }
+      },
+      "content_for_index": [
+        "slideshow",
+        "collection",
+        "text-over-image",
+        "image-bar",
+        "feature-row",
+        "instagram"
+      ]
+    },
+    "Oslo": {
+      "font-colour": "#000000",
+      "link-colour": "#000000",
+      "active-link-colour": "#000000",
+      "sale-label-colour": "#000000",
+      "header-background-colour": "#f6f6f6",
+      "header-text-colour": "#000000",
+      "bg_colour": "#f6f6f6",
+      "indiv_product_shadowing": false,
+      "logo_colour": "#252525",
+      "logo_hover_colour": "#000",
+      "add-to-cart-background-colour": "#000000",
+      "add-to-cart-background-hover-colour": "#3a3a3a",
+      "add-to-cart-text-colour": "#ffffff",
+      "typography-heading-font": "typography-heading-alegreya",
+      "title-bar-styling": "title-bar-minimal",
+      "typography-body-font": "typography-body-lato",
+      "typography-body-font-size": "14px",
+      "typography-menu-font-size": "15px",
+      "menu-case": "menu-normal-case",
+      "header_font_size": "30px",
+      "header_font_style": "normal",
+      "sections": {
+        "header": {
+          "type": "header",
+          "settings": {
+            "top_bar_linklist": "",
+            "main_linklist": "main-menu"
+          }
+        },
+        "slideshow": {
+          "type": "slideshow",
+          "blocks": {
+            "slideshow-0": {
+              "type": "image",
+              "settings": {}
+            },
+            "slideshow-1": {
+              "type": "image",
+              "settings": {}
+            }
+          },
+          "block_order": [
+            "slideshow-0",
+            "slideshow-1"
+          ],
+          "settings": {
+            "slider-width": "full-width"
+          }
+        },
+        "image-bar": {
+          "type": "image-bar",
+          "blocks": {
+            "image-bar-0": {
+              "type": "image",
+              "settings": {}
+            },
+            "image-bar-1": {
+              "type": "image",
+              "settings": {}
+            },
+            "image-bar-2": {
+              "type": "image",
+              "settings": {}
+            },
+            "image-bar-3": {
+              "type": "image",
+              "settings": {}
+            }
+          },
+          "block_order": [
+            "image-bar-0",
+            "image-bar-1",
+            "image-bar-2",
+            "image-bar-3"
+          ],
+          "settings": {}
+        },
+        "collection": {
+          "type": "collection",
+          "settings": {
+            "rows": "1"
+          }
+        },
+        "feature-row": {
+          "type": "feature-row",
+          "settings": {}
+        },
+        "featured-blog": {
+          "type": "featured-blog",
+          "settings": {
+            "post_limit": "1"
+          }
+        },
+        "logo-bar": {
+          "type": "logo-bar",
+          "settings": {}
+        },
+        "instagram": {
+          "type": "instagram",
+          "settings": {}
+        },
+        "footer": {
+          "type": "footer",
+          "settings": {}
+        }
+      },
+      "content_for_index": [
+        "slideshow",
+        "image-bar",
+        "collection",
+        "featured-blog",
+        "instagram"
+      ]
+    },
+    "Copenhagen": {
+      "font-colour": "#000",
+      "link-colour": "#000",
+      "active-link-colour": "#000",
+      "sale-label-colour": "#f26c4f",
+      "header-background-colour": "#ffffff",
+      "header-text-colour": "#AAB1B4",
+      "bg_colour": "#ffffff",
+      "indiv_product_shadowing": true,
+      "logo_colour": "#252525",
+      "logo_hover_colour": "#000",
+      "add-to-cart-background-colour": "#5cb85c",
+      "add-to-cart-background-hover-colour": "#449d44",
+      "add-to-cart-text-colour": "#ffffff",
+      "typography-heading-font": "typography-heading-varela-round",
+      "title-bar-styling": "title-bar-lowercase",
+      "typography-body-font": "typography-body-open-sans",
+      "typography-body-font-size": "13px",
+      "typography-menu-font-size": "14px",
+      "menu-case": "menu-lower-case",
+      "header_font_size": "30px",
+      "header_font_style": "normal",
+      "sections": {
+        "header": {
+          "type": "header",
+          "settings": {
+            "top_bar_linklist": "",
+            "main_linklist": "main-menu"
+          }
+        },
+        "slideshow": {
+          "type": "slideshow",
+          "blocks": {
+            "slideshow-0": {
+              "type": "image",
+              "settings": {}
+            },
+            "slideshow-1": {
+              "type": "image",
+              "settings": {}
+            }
+          },
+          "block_order": [
+            "slideshow-0",
+            "slideshow-1"
+          ],
+          "settings": {
+            "slider-width": "fixed"
+          }
+        },
+        "image-bar": {
+          "type": "image-bar",
+          "blocks": {
+            "image-bar-0": {
+              "type": "image",
+              "settings": {}
+            },
+            "image-bar-1": {
+              "type": "image",
+              "settings": {}
+            },
+            "image-bar-2": {
+              "type": "image",
+              "settings": {}
+            }
+          },
+          "block_order": [
+            "image-bar-0",
+            "image-bar-1",
+            "image-bar-2"
+          ],
+          "settings": {}
+        },
+        "collection": {
+          "type": "collection",
+          "settings": {
+            "grid": "3",
+            "rows": "1"
+          }
+        },
+        "feature-row": {
+          "type": "feature-row",
+          "settings": {}
+        },
+        "featured-blog": {
+          "type": "featured-blog",
+          "settings": {
+            "post_limit": "2"
+          }
+        },
+        "logo-bar": {
+          "type": "logo-bar",
+          "settings": {}
+        },
+        "instagram": {
+          "type": "instagram",
+          "settings": {}
+        },
+        "footer": {
+          "type": "footer",
+          "settings": {}
+        }
+      },
+      "content_for_index": [
+        "slideshow",
+        "image-bar",
+        "collection",
+        "featured-blog",
+        "instagram"
+      ]
+    },
+    "Gothenburg": {
+      "font-colour": "#000",
+      "link-colour": "#000",
+      "active-link-colour": "#000",
+      "sale-label-colour": "#f26c4f",
+      "header-background-colour": "#ffffff",
+      "header-text-colour": "#000000",
+      "bg_colour": "#ffffff",
+      "indiv_product_shadowing": false,
+      "logo_colour": "#252525",
+      "logo_hover_colour": "#000",
+      "add-to-cart-background-colour": "#5cb85c",
+      "add-to-cart-background-hover-colour": "#449d44",
+      "add-to-cart-text-colour": "#ffffff",
+      "typography-heading-font": "typography-heading-work-sans",
+      "title-bar-styling": "title-bar-minimal",
+      "typography-body-font": "typography-body-work-sans",
+      "typography-body-font-size": "14px",
+      "typography-menu-font-size": "14px",
+      "menu-case": "menu-normal-case",
+      "header_font_size": "30px",
+      "header_font_style": "normal",
+      "sections": {
+        "header": {
+          "type": "header",
+          "settings": {
+            "top_bar_linklist": "",
+            "main_linklist": "main-menu"
+          }
+        },
+        "slideshow": {
+          "type": "slideshow",
+          "blocks": {
+            "slideshow-0": {
+              "type": "image",
+              "settings": {}
+            },
+            "slideshow-1": {
+              "type": "image",
+              "settings": {}
+            }
+          },
+          "block_order": [
+            "slideshow-0",
+            "slideshow-1"
+          ],
+          "settings": {
+            "slider-width": "full-width"
+          }
+        },
+        "image-bar": {
+          "type": "image-bar",
+          "blocks": {
+            "image-bar-0": {
+              "type": "image",
+              "settings": {}
+            },
+            "image-bar-1": {
+              "type": "image",
+              "settings": {}
+            },
+            "image-bar-2": {
+              "type": "image",
+              "settings": {}
+            },
+            "image-bar-3": {
+              "type": "image",
+              "settings": {}
+            }
+          },
+          "block_order": [
+            "image-bar-0",
+            "image-bar-1",
+            "image-bar-2",
+            "image-bar-3"
+          ],
+          "settings": {}
+        },
+        "collection": {
+          "type": "collection",
+          "settings": {
+            "grid": "3",
+            "rows": "2"
+          }
+        },
+        "feature-row": {
+          "type": "feature-row",
+          "settings": {}
+        },
+        "featured-blog": {
+          "type": "featured-blog",
+          "settings": {
+            "post_limit": "3"
+          }
+        },
+        "logo-bar": {
+          "type": "logo-bar",
+          "settings": {}
+        },
+        "instagram": {
+          "type": "instagram",
+          "settings": {}
+        },
+        "footer": {
+          "type": "footer",
+          "settings": {}
+        }
+      },
+      "content_for_index": [
+        "slideshow",
+        "image-bar",
+        "collection",
+        "featured-blog",
+        "instagram"
+      ]
+    }
+  }
+}

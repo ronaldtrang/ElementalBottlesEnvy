@@ -1,0 +1,48 @@
+<div>
+	<img id="desktopHero" src="{{ section.settings.desktopImage | img_url: '2048x'}}" class="full-width" />
+	<img id="mobileHero" src="{{ section.settings.mobileImage | img_url: '2048x'}}" class="full-width" />
+</div>
+
+
+{% schema %}
+{
+  "name": "Hero",
+  "class": "homepage-section--hero-wrapper",    
+
+  "settings": [
+	{
+      "type": "image_picker",
+      "id": "desktopImage",
+      "label": "Desktop image"
+    },
+	{
+      "type": "image_picker",
+      "id": "mobileImage",
+      "label": "Mobile image"
+    }
+  ],
+  "presets": [{
+    "name": "Hero",
+    "category": "Image"
+  }]
+}
+{% endschema %}
+
+
+{% javascript %}
+var displayHeroImage = function() {
+	if (window.innerWidth < 768 ) {
+       $("#mobileHero").show();
+       $("#desktopHero").hide();                        
+    } else {
+       $("#mobileHero").hide();
+       $("#desktopHero").show();   
+    }
+}
+
+$(window).resize(function() {
+	displayHeroImage(); 
+});                               
+
+displayHeroImage();                           
+{% endjavascript %}

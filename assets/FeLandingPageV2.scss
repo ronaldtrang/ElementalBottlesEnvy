@@ -1,0 +1,257 @@
+$teal: #29838f;
+$white: #ffffff;
+$light-tan: #EFEAE5;
+$dark-tan: #9e9489;
+$brown: #716559;
+$twitter-blue: #1DA1F2;
+$facebook-blue: #4267B2;
+
+.cart-container  {
+  a {
+    height: 70px;
+    width: 70px;
+    background: black;
+    color: white;
+    text-align: center;
+    position: fixed;
+    top: 0;
+    right: 0;
+    border-radius: 50%;
+    padding-top: 19px;
+    margin-right: 15px;
+    margin-top: 15px;
+    font-weight: bold;
+    
+    &:hover {
+      opacity: 0.7;
+      text-decoration: none;
+    }
+    
+    &:focus {
+      text-decoration: none;
+    }
+  }
+  
+  @media screen and (max-width: 992px) {
+    display: none;
+  }
+}
+
+.cart-container-mobile {
+  a {
+    display: none;
+    background-color: black;
+    position: fixed;
+    right: 0;
+    bottom: 50%;
+    width: 35px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    text-align: center;
+    font-size: 20px;
+    border-radius: 10% 0 0 10%;
+
+    .cart-count {
+      display: block;
+      color: white;
+    }
+
+    i {
+      color: white;
+    }
+
+    &:hover {
+      opacity: 0.7;
+      text-decoration: none;
+    }
+
+    &:focus {
+      text-decoration: none;
+    }
+
+    @media screen and (max-width: 992px) {
+      display: block;
+    }
+  }
+}
+
+
+
+.warranty-text {
+  background-color: black;
+  padding: 10px;
+  color: white;
+  
+  a {
+   color: gainsboro; 
+  }
+}
+
+body {
+  font-family: 'Open Sans';
+  background-color: $light-tan;
+  
+  h1 {
+    font-weight: 300;
+  }
+  
+  .full-width {
+    width: 100%;
+  }
+  
+  .m-t-10 {
+    margin-top: 10px;
+  }
+  
+  .m-t-15 {
+    margin-top: 15px;
+  }
+  
+  .m-t-20 {
+    margin-top: 20px;
+  }
+  
+  .m-b-20 {
+    margin-bottom: 20px;
+  }
+  
+  .p-t-10 {
+    padding-top: 10px;
+  }
+  
+  .p-t-15 {
+    padding-top: 15px;
+  }
+  
+  .p-t-20 {
+    padding-top: 20px;
+  }
+  
+  .p-b-5 {
+    padding-bottom: 5px;
+  }
+  
+  .p-b-10 {
+    padding-bottom: 10px;
+  }
+  
+  .p-b-15 {
+    padding-bottom: 15px;
+  }
+  
+  .p-b-20 {
+    padding-bottom: 20px;
+  }
+  
+  .p-b-40 {
+    padding-bottom: 40px;
+  }
+  
+  .p-b-50 {
+    padding-bottom: 40px;
+  }
+  
+  .title-container {
+    background: black;
+    color: white;
+    padding: 10px 0 20px 0;
+  }
+  
+  .get-a-bottle-container {
+    background: gainsboro;
+    padding: 30px 15px 40px 15px;
+    text-align: center;
+    color: black;
+   }
+  
+  .order-button {
+    border-radius: 0;
+    border: 0 none;
+    background: $teal;
+	padding-top: 10px;
+    padding-bottom: 10px;
+
+    &:focus {
+      background: $dark-tan;
+    }
+
+
+    &:hover {
+      background: $dark-tan;
+    }
+  }
+  
+  .icon-banner {
+    background-color: white;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+  
+  .description-container {
+    background-color: $white;
+    color: black;
+    padding: 50px 50px 40px 50px;
+  }
+  
+  .measurement-container {
+    background-color: gainsboro;
+    color: black;
+    padding: 30px 15px 40px 15px;
+  }
+  
+  .landing-page-v2 {
+	.bottle-container {
+      .bottle-title {
+        font-weight: bold;
+        font-size: 18px;
+      }
+    }
+    
+    .social-share-container {
+      a {
+       &:hover {
+        opacity: 0.7;
+        text-decoration: none; 
+       }
+       
+       &:focus {
+        text-decoration: none; 
+       } 
+      }
+      
+      ul {
+        text-align: center;
+		padding-left: 0;
+        
+        li {
+          display: inline;
+          margin-left: 5px;
+          margin-right: 5px;
+        }
+      }          
+      
+      .social-share-button {
+        color: white;
+        padding: 7px 15px;
+        font-weight: bold;
+        font-size: 15px;
+        
+        &.facebook-button {
+          background-color: $facebook-blue; 
+        }
+        
+        &.pinterest-button {
+          background-color: red; 
+        }
+
+        &.twitter-button {
+          background-color: $twitter-blue; 
+        }
+        
+        i {
+         margin-right: 5px; 
+        }
+      }
+    }
+  }
+}
